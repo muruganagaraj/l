@@ -1,0 +1,10 @@
+{
+    "apiBaseUrl": "api url",
+    "appVersion": "0.0.1",
+    "uiBaseUrl": "ui url",
+    "sessionTimeOutInMinutes": 20,
+    "sessionTimeOutWarningInMinutes": 2,
+    "externalUrls": {
+        "facebook": "https://www.facebook.com"
+    }
+}

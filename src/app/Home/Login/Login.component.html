@@ -1,0 +1,74 @@
+<section class="uk-cover-container uk-flex uk-light">
+  <article class="uk-width-5-6 uk-height-1-1 uk-cover-container uk-background-secondary uk-height-viewport">
+    <!-- Background image with mask-->
+    <img sizes="100vw" alt="" class="uk-cover" src="assets/images/loginPage-bg.png">
+    <div class="uk-position-cover uk-overlay-primary"></div>
+    <!-- END - Background image with mask-->
+    <div class="uk-height-viewport uk-width-5-6 uk-margin-auto uk-position-relative">
+      <div class="uk-width-1-1 uk-padding uk-padding-remove-horizontal">
+        <div class="uk-width-1-2">
+          <img src="assets/images/logo.png" alt="logo" />
+        </div>
+        <h2 class="uk-text-light uk-margin-medium-bottom uk-position-bottom-center uk-visible@m uk-text-left">Dummy Text Dummy Text Dummy Text Dummy Text Dummy Text</h2>
+      </div>
+    </div>
+  </article>
+
+    <article class="uk-width-2-3 uk-height-1-1 uk-background-primary uk-height-viewport uk-position-relative">
+        <div class="uk-width-2-3 uk-margin-auto uk-padding uk-padding-remove-horizontal">
+            <div class="uk-alert uk-warningDark uk-border-rounded uk-text-small uk-margin-small">
+                <div>Message:</div>
+                <div>This site is temporarily down for maintenance</div>
+            </div>
+            <div class="uk-position-bottom-center uk-position-small uk-visible@m">
+              <h6 class="uk-text-center uk-margin-remove-bottom">
+                <span class="uk-display-block">© 2015-2018 First American Financial Corporation and/or its Affliliates.</span>
+                <span class="uk-display-block">All Rights Reserved.</span>
+              </h6>
+            </div>
+            <form class="loginForm-bg">
+              <div class="uk-margin">
+                <h5 class="uk-flex uk-padding-small uk-padding-remove-horizontal uk-margin-remove-bottom">
+                  <span class="uk-text-bold uk-padding-small uk-padding-remove-vertical uk-padding-remove-left border-rightSeparator">SIGN IN</span>
+                  <span class="uk-text-muted uk-padding-small uk-padding-remove-vertical">REQUEST ACCOUNT</span>
+                </h5>
+              </div>
+              <fieldset class="uk-fieldset">
+                <div class="uk-margin">
+                  <div class="uk-inline uk-width-1-1 uk-position-relative">
+                    <input class="uk-input field-transparent uk-floatingLabel" required="" type="text">
+                    <label class="uk-floatingLabel-placeholder">User Name</label>
+                  </div>
+                </div>
+                <div class="uk-margin">
+                  <div class="uk-inline uk-width-1-1 uk-position-relative">
+                    <input class="uk-input field-transparent uk-floatingLabel" required=""  type="password">
+                    <label class="uk-floatingLabel-placeholder">Password</label>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="uk-margin uk-text-center">
+                <button type="submit" class="uk-button uk-button-danger uk-border-pill">sign in</button>
+              </div>
+            </form>
+            <div>
+                <div class="uk-text-center">
+                    <a class="uk-link-reset uk-text-small uk-text-uppercase uk-text-semiBold" data-uk-toggle="target: #recover;animation: uk-animation-slide-top-small">Forgot password?</a>
+                </div>
+                <div class="uk-margin-small-top" id="recover" hidden="">
+                    <form action="login-dark.html">
+                        <div class="uk-margin-small">
+                            <div class="uk-inline uk-width-1-1">
+                                <input class="uk-input field-transparent" placeholder="E-mail" required="" type="text">
+                            </div>
+                        </div>
+                        <div class="uk-margin-small uk-text-center">
+                            <button type="submit" class="uk-button uk-button-primary uk-border-pill">SEND PASSWORD</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</section>

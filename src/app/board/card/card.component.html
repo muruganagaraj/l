@@ -1,0 +1,156 @@
+ <!-- Card -->
+  <div class="uk-card uk-card-default uk-card-small uk-flex uk-flex-column af-card uk-grid-child"
+  [ngClass]="{'card-flipped': FlipCardId.includes(vm.fastFileId)}"
+  >
+    <article class="uk-card-body">
+      <img src="assets/images/icons/flip.svg" class="uk-position-top-right uk-padding-small" (click)="onFlipClick(vm.fastFileId)"/>
+      <div class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-left">
+        <div class="uk-flex">
+          <div class="uk-width-1-2">
+            <label class="uk-text-uppercase uk-text-small">FA FILE</label>
+            <div class="uk-text-uppercase uk-text-bold uk-text-danger">{{vm.fastFileId}}</div>
+          </div>
+          <div class="uk-width-1-2">
+            <label class="uk-text-uppercase uk-text-small">YOUR FILE</label>
+            <div class="uk-text-uppercase uk-text-blue uk-text-truncate">{{vm.aFFileName}}</div>
+          </div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-small-top" *ngIf="!FlipCardId.includes(vm.fastFileId)">
+          <label class="uk-text-uppercase uk-text-small">SELLER</label>
+          <div class="uk-text-uppercase uk-text-blue">{{vm.sellerName}}</div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-small-top" *ngIf="!FlipCardId.includes(vm.fastFileId)">
+          <label class="uk-text-uppercase uk-text-small">ADDRESS</label>
+          <div class="uk-text-uppercase uk-text-blue uk-text-weight300">{{vm.address}}</div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-small-top" *ngIf="FlipCardId.includes(vm.fastFileId)">
+            <label class="uk-text-uppercase uk-text-small">TREANSACTION</label>
+            <div class="uk-text-uppercase uk-text-blue">{{vm.transaction}}</div>
+          </div>
+          <div class="uk-width-1-1 uk-margin-small-top" *ngIf="FlipCardId.includes(vm.fastFileId)">
+            <label class="uk-text-uppercase uk-text-small">LOCATION</label>
+            <div class="uk-text-uppercase uk-text-blue uk-text-weight300">{{vm.location}}</div>
+          </div>
+      </div>
+    </article>
+    <article class="uk-flex uk-card-footer uk-flex-between uk-flex-1">
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Examiner_Worksheet.svg" class="icon-muted" uk-tooltip="EXAMINER WORKSHEET" data-trigger="click" />
+          <img src="assets/images/icons/Available.svg" class="status-icon" />
+        </div>
+      </div>
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Schedule_Closing.svg" />
+          <img src="assets/images/icons/Not_Available.svg" class="status-icon" />
+        </div>
+      </div>
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Closing_Figures.svg" />
+          <img src="assets/images/icons/Not_Available.svg" class="status-icon" />
+        </div>
+      </div>
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Documents.svg" />
+          <img src="assets/images/icons/Not_Available.svg" class="status-icon" />
+        </div>
+      </div>
+    </article>
+  </div>
+  <!-- Flip Card -->
+  <!-- <div class="uk-hidden uk-card uk-card-default uk-card-small uk-flex uk-flex-column af-card card-flipped">
+    <article class="uk-card-body">
+      <img src="assets/images/icons/flip.svg" class="uk-position-top-right uk-padding-small" />
+      <div class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-left">
+        <div class="uk-flex">
+          <div class="uk-width-1-2">
+            <label class="uk-text-uppercase uk-text-small">FA FILE</label>
+            <div class="uk-text-uppercase uk-text-bold uk-text-danger">2953832</div>
+          </div>
+          <div class="uk-width-1-2">
+            <label class="uk-text-uppercase uk-text-small">YOUR FILE</label>
+            <div class="uk-text-uppercase uk-text-blue uk-text-truncate">TEST FILE 123</div>
+          </div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-small-top">
+          <label class="uk-text-uppercase uk-text-small">closing date &amp; time</label>
+          <div class="uk-text-uppercase uk-text-blue">21/01/2019 9:00 AM</div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-small-top">
+          <label class="uk-text-uppercase uk-text-small">location</label>
+          <div class="uk-text-uppercase uk-text-blue uk-text-weight300">4305 N RICHMOND UNIT 6, IL</div>
+        </div>
+      </div>
+    </article>
+    <article class="uk-flex uk-card-footer uk-flex-between uk-flex-1">
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Examiner_Worksheet.svg" class="icon-muted" />
+          <img src="assets/images/icons/Available.svg" class="status-icon" />
+        </div>
+      </div>
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Schedule_Closing.svg" />
+          <img src="assets/images/icons/Not_Available.svg" class="status-icon" />
+        </div>
+      </div>
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Closing_Figures.svg" />
+          <img src="assets/images/icons/Not_Available.svg" class="status-icon" />
+        </div>
+      </div>
+      <div class="footer-item uk-width-1-4">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Documents.svg" />
+          <img src="assets/images/icons/Not_Available.svg" class="status-icon" />
+        </div>
+      </div>
+    </article>
+  </div> -->
+  <!--END - Flip Card-->
+  <!-- Order button with footer -->
+  <!-- <div class="uk-hidden uk-card uk-card-default uk-card-small uk-flex uk-flex-column af-card card-flipped">
+    <article class="uk-card-body">
+      <img src="assets/images/icons/flip.svg" class="uk-position-top-right uk-padding-small" />
+      <div class="uk-padding-small uk-padding-remove-vertical uk-padding-remove-left">
+        <div class="uk-flex">
+          <div class="uk-width-1-2">
+            <label class="uk-text-uppercase uk-text-small">FA FILE</label>
+            <div class="uk-text-uppercase uk-text-bold uk-text-danger">2953832</div>
+          </div>
+          <div class="uk-width-1-2">
+            <label class="uk-text-uppercase uk-text-small">YOUR FILE</label>
+            <div class="uk-text-uppercase uk-text-blue uk-text-truncate">TEST FILE 123</div>
+          </div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-small-top">
+          <label class="uk-text-uppercase uk-text-small">closing date &amp; time</label>
+          <div class="uk-text-uppercase uk-text-blue">21/01/2019 9:00 AM</div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-small-top">
+          <label class="uk-text-uppercase uk-text-small">location</label>
+          <div class="uk-text-uppercase uk-text-blue uk-text-weight300">4305 N RICHMOND UNIT 6, IL</div>
+        </div>
+      </div>
+    </article>
+    <article class="uk-flex uk-card-footer uk-flex-between uk-flex-1">
+      <div class="footer-item uk-width-2-4 uk-text-center">
+        <button class="uk-button uk-button-danger uk-button-small uk-border-pill uk-text-capitalize uk-width-2-3">order title</button>
+      </div>
+      <div class="footer-item uk-width-1-3">
+        <div class="uk-position-relative icon-wrapper uk-margin-auto">
+          <img src="assets/images/icons/Documents.svg">
+          <img class="status-icon" src="assets/images/icons/Not_Available.svg">
+        </div>
+      </div>
+    </article>
+  </div> -->
+  <!--END - Order button with footer-->
+<!-- Card -->
+
+

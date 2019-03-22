@@ -1,0 +1,239 @@
+@import "mixins.scss";
+@import "variables.scss";
+
+html {
+  font-family: Montserrat, "Segoe UI", Roboto, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+}
+
+.field-transparent,
+.uk-input.field-transparent {
+  @include background('color',transparent);
+  @include border-full(0px,solid,$white-color);
+  @include border('bottom', 1px, solid, $white-color);
+}
+
+.uk-input.field-transparent:focus,
+.uk-input.field-transparent:focus {
+  @include background('color',transparent);
+  @include border('bottom', 1px, solid, $primary-color);
+}
+
+.uk-warningDark {
+  @include background('color',$warning-bgColor);
+  color: $warning-fontColor;
+  @include padding(5px,15px,5px,15px);
+}
+
+.uk-button-danger {
+  @include background('color',$danger-bgColor);
+}
+
+.uk-background-primary {
+  @include background('color',$primary-bgColor);
+}
+
+.border-rightSeparator {
+  @include border('right',1px,solid,$separator-color)
+}
+
+.uk-text-light {
+  @include font('weight',200);
+}
+
+.uk-text-weight400 {
+  @include font('weight',400);
+}
+
+.uk-text-semiBold {
+  @include font('weight',500);
+}
+
+.loginForm-bg {
+  background: url('assets/images/form-bg.png') no-repeat center center;
+}
+
+/*background-color: $header-bgLeftColor; // Old browsers
+@include filter-gradient($header-bgLeftColor, #418ad8, horizontal); // IE6-9
+@include background-image(linear-gradient(left, $header-bgLeftColor 0%,$header-bgRightColor 51%,#418ad8 74%));
+*/
+.header-bg {
+  background: $header-bgLeftColor; /* Old browsers */
+  background: -moz-linear-gradient(left, $header-bgLeftColor 40%, $header-bgRightColor 99%, $header-bgRightColor 100%, $header-bgRightColor 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, $header-bgLeftColor 40%,$header-bgRightColor 99%,$header-bgRightColor 100%,$header-bgRightColor 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $header-bgLeftColor 40%,$header-bgRightColor 99%,$header-bgRightColor 100%,$header-bgRightColor 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$header-bgLeftColor', endColorstr='$header-bgRightColor',GradientType=1 ); /* IE6-9 */
+}
+
+.uk-navbar-nav > li > a,
+.uk-navbar-item,
+.uk-navbar-toggle {
+  min-height: 30px;
+}
+
+.uk-footer-separator {
+  @include border('top', 1px, solid, $primary-separator);
+}
+
+/*Buttons css*/
+.uk-button-outline.uk-button-small {
+  padding: 3px 15px;
+  line-height: 25px;
+}
+
+.uk-button-outline.uk-button-primary {
+  border-color: $btn-primary-color;
+  color: $btn-primary-color;
+  @include background('color',transparent);
+}
+
+.uk-button-outline.uk-button-primary:hover,
+.uk-button-outline.uk-button-primary:focus {
+  border-color: lighten($btn-primary-color,20%);
+  color: lighten($btn-primary-color,20%);
+}
+/*Slider css*/
+.at-uk-slidenav {
+  &.uk-slidenav {
+    padding: 0px;
+  }
+
+  &.uk-invisible {
+    visibility: visible !important;
+    display: block !important;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+  }  
+}
+/*Card css*/
+.af-card-container {
+  .af-card,
+  .uk-card.af-card:not(.uk-grid-child) {
+    margin-right: 10px;
+    margin-left: 10px;
+
+    &:not(.uk-grid-child):last-child {
+      margin-right: 0px;
+    }
+  }
+
+  &.uk-grid > * {
+    margin-bottom: 15px;
+    padding-right: 15px;
+  }
+}
+
+.af-card,
+.uk-card.uk-card-default.af-card {
+  @include border-full(1px,solid,$card-border);
+  box-shadow: 0px 3px 6px 0px rgba(136, 152, 170, 0.15);
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(136, 152, 170, 0.15);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(136, 152, 170, 0.15);
+  border-radius: 4px;
+
+  &.status-completed {
+    @include border('left',10px,solid,$card-completedBorder);
+  }
+
+  &.status-inprogress {
+    @include border('left',10px,solid,$card-border);
+    @include border-style('image-slice',0 0 0 18);
+    @include border-style('image-width',2px 0px 2px 10px);
+    @include border-style('image-outset',0px 0px 0px 0px);
+    @include border-style('image-repeat',repeat repeat);
+    @include border-style('image-source',url(assets/images/icons/card-progressBar.svg));
+  }
+
+  &.card-flipped {
+    background: $card-flippedBg;
+  }
+
+  .uk-text-small {
+    font-size: 0.775rem;
+  }
+
+  .uk-card-footer {
+    @include background('color',$card-footerBgColor);
+    padding: 10px 0px 8px 0px;
+
+    .footer-item {
+      @extend .left-separator;
+
+      &:last-child {
+        @include border('right',1px,solid,$card-footerBgColor)
+      }
+
+      .icon-muted {
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+      }
+
+      .icon-wrapper {
+        width: 22px;
+      }
+    }
+
+    .status-icon {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+    }
+
+    .left-separator {
+      @include border('right',1px,solid,$primary-separator);
+    }
+  }
+}
+/*Tooltip Css*/
+.uk-tooltip {
+  background: $tooltip-bg;
+
+  &:after {
+    z-index: -1;
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+  }
+
+  &.uk-tooltip-top-left:after {
+    bottom: -5px;
+    left: 10px;
+    @include border('top',5px,solid,$tooltip-bg);
+    @include border('left',5px,solid,transparent);
+    @include border('right',5px,solid,transparent);
+  }
+}
+
+/*Text css*/
+.uk-text-danger {
+  color: $danger-color;
+}
+/*Floating label css*/
+.uk-floatingLabel-placeholder {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  padding: 7px 0 0 0px;
+  transition: all 200ms;
+  opacity: 0.5;
+}
+
+.uk-floatingLabel:focus,
+.uk-floatingLabel:valid {
+  + .uk-floatingLabel-placeholder {
+    font-size: 75%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+  }
+}
+
+.uk-text-blue,
+.uk-navbar-nav > li > a.uk-text-blue {
+  color: $text-blue;
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: not-allowed; 
+}

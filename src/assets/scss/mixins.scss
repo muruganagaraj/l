@@ -1,0 +1,29 @@
+// using mixin to store border styles
+@mixin border-full($width, $style, $color) {
+  border: $width $style $color;
+}
+@mixin border($direction, $width, $style, $color) {
+  border-#{$direction}: $width $style $color;
+}
+@mixin border-style($direction,$style) {
+  border-#{$direction}: $style;
+}
+
+// using mixin to store background styles
+@mixin background($type,$style) {
+  background-#{$type}: $style;
+}
+
+// using mix to store padding & margin
+@mixin padding($top,$left,$bottom,$right){
+  padding:$top $left $bottom $right;
+}
+
+// using mix to store text styles
+@mixin font($type,$style) {
+  font-#{$type}: $style;
+}
+
+// using mix to store gradient bg
+
+
